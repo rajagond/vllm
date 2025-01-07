@@ -50,6 +50,13 @@ void paged_attention_v2(
     const int64_t blocksparse_vert_stride, const int64_t blocksparse_block_size,
     const int64_t blocksparse_head_sliding_step);
 
+void copy_2d(
+  torch::Tensor& dest, 
+  const torch::Tensor& src,
+  int64_t N, 
+  int64_t start_idx, int64_t num_elems);
+
+
 void rms_norm(torch::Tensor& out, torch::Tensor& input, torch::Tensor& weight,
               double epsilon);
 

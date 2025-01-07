@@ -33,6 +33,9 @@ else:
     except ImportError:
         from torch.library import impl_abstract as register_fake
 
+def copy_2d(dest: torch.Tensor, src: torch.Tensor,
+            N: int, start_idx: int, num_elems: int) -> None:
+    torch.ops._C.copy_2d(dest, src, N, start_idx, num_elems)
 
 # activation ops
 def silu_and_mul(out: torch.Tensor, x: torch.Tensor) -> None:

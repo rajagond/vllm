@@ -191,6 +191,7 @@ set(VLLM_EXT_SRC
   "csrc/attention/paged_attention_v2.cu"
   "csrc/pos_encoding_kernels.cu"
   "csrc/activation_kernels.cu"
+  "csrc/copy.cu"
   "csrc/layernorm_kernels.cu"
   "csrc/layernorm_quant_kernels.cu"
   "csrc/quantization/gptq/q_gemm.cu"

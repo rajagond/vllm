@@ -50,6 +50,10 @@ TORCH_LIBRARY_EXPAND(TORCH_EXTENSION_NAME, ops) {
       "    int blocksparse_head_sliding_step) -> ()");
   ops.impl("paged_attention_v2", torch::kCUDA, &paged_attention_v2);
 
+  // Copy operation
+  ops.def("copy_2d(Tensor! dst, Tensor src, int N, int start_idx, int num_elems) -> ()");
+  ops.impl("copy_2d", torch::kCUDA, &copy_2d);
+  
   // Activation ops
   // Activation function used in SwiGLU.
   ops.def("silu_and_mul(Tensor! out, Tensor input) -> ()");
