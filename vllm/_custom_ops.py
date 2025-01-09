@@ -38,10 +38,6 @@ def copy_2d(dest: torch.Tensor, src: torch.Tensor,
     torch.ops._C.copy_2d(dest, src, N, start_idx, num_elems)
 
 # activation ops
-def silu_and_mul(out: torch.Tensor, x: torch.Tensor) -> None:
-    torch.ops._C.silu_and_mul(out, x)
-
-
 def gelu_and_mul(out: torch.Tensor, x: torch.Tensor) -> None:
     torch.ops._C.gelu_and_mul(out, x)
 
